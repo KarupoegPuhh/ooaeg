@@ -23,8 +23,9 @@
         <label for="long">longitude: </label>
         <input id="long" type="number" name="long" value="24.753574">
         <label for="date">Kuupäev: </label>
-        <input id="date" type="date" name="date" value="2022-04-01">
-        <button onclick="handleInput()">Arvuta!</button>
+        <input id="date" type="datetime-local" name="date" value="2022-04-01T02:00">
+        <button onclick="handleInput()">Arvuta ööaeg valitud kuupäeval</button>
+        <button onclick="showShadow()">Näita öist ala valitud kellaajal</button>
     </top>
     <p id="tulemus"> </p>
     
