@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <script src="node_modules\suncalc\suncalc.js"></script>
     <script src="s.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+    
+    <script src="node_modules\suncalc\suncalc.js"></script>
+
     <title>Ööaeg</title>
 </head>
 
@@ -17,10 +23,13 @@
         <label for="long">longitude: </label>
         <input id="long" type="number" name="long" value="24.753574">
         <label for="date">Kuupäev: </label>
-        <input id="date" type="date" name="date" value="2022-05-01">
+        <input id="date" type="date" name="date" value="2022-04-01">
         <button onclick="handleInput()">Arvuta!</button>
     </top>
     <p id="tulemus"> </p>
+    
+    <div id="map" style="height: 88vh"></div>
+    <script>mapLoad()</script>
 
 </body>
 </html>
