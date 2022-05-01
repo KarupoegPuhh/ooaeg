@@ -1,5 +1,3 @@
-//import SunCalc from 'SunCalc';
-//var SunCalc = require('suncalc.js');
 
 function onLoad(){
     //viited vajalikkudele elementidele //references to elements we need access to
@@ -11,12 +9,10 @@ function onLoad(){
 }
 
 var map;
+var shadow_polygon;
 
 function mapLoad(){
-    map = L.map('map', {
-        //maxBoundsViscosity: 0,
-        //maxBounds: [[-180, -90],[180, 90]]
-    }).setView([40, 0], 3);//.fitBounds([[-180, -90],[180, 90]]);
+    map = L.map('map').setView([40, 0], 3);
 
     var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
         maxZoom: 18,
@@ -29,34 +25,22 @@ function mapLoad(){
         bounds: [[-90, -180],[90, 180]]
     }).addTo(map);
 
-    //popup = L.popup();
-
     function onMapClick(e) {
         lat_e.value = e.latlng.lat;
         long_e.value = e.latlng.lng;
         
         //kohe kui vajutad siis arvutab
         handleInput();
-        /*
-        popup
-            .setLatLng(e.latlng)
-            .setContent(e.latlng.lat+", "+e.latlng.lng)
-            .openOn(map);
-        */
     }
 
     map.on('click', onMapClick);
 
-    shadow_line_points = [];
-    shadow_polygon = L.polygon(shadow_line_points).addTo(map);
+    shadow_polygon = L.polygon([[0,0]]).addTo(map);
 }
 
 function showShadow(){
-    /*if(polygon){
-        polygon.remove();
-    }*/
     shadow_polygon.remove();
-    shadow_line_points = [];
+    var shadow_line_points = [];
 
     var deg = 0.6; //kui mitme kraadi võrra täpselt otsida
     var prev_in_shadow = isShadow(-90,-180);//kas eelmisena vaadatatud punkt oli varjus
@@ -95,7 +79,6 @@ function showShadow(){
     //L.clearShapes(map);
     
     shadow_polygon = L.polygon(shadow_line_points).addTo(map);
-    //polygon.redraw();
     //console.log(shadow_line_points);
     
 }
