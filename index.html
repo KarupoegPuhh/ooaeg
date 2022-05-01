@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="node_modules\suncalc\suncalc.js"></script>
+    <script src="s.js"></script>
+    <title>Ööaeg</title>
+</head>
+
+<body onload="onLoad()">
+    <top>
+        <label for="lat">latitude: </label>
+        <input id="lat" type="number" name="lat" value="59.436962">
+        <label for="long">longitude: </label>
+        <input id="long" type="number" name="long" value="24.753574">
+        <label for="date">Kuupäev: </label>
+        <input id="date" type="date" name="date" value="2022-05-01">
+        <button onclick="handleInput()">Arvuta!</button>
+    </top>
+    <p id="tulemus"> </p>
+
+</body>
+</html>
