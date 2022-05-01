@@ -1,4 +1,4 @@
-# ooaeg
+# Ööaeg
 
 öise perioodi pikkuseks valisin aja, mil valitud kuupäeva (00:00 kuni 00:00) jooksul on päike valitud koha jaoks täielikult nähtamatu ehk enne astronoomilist koidikut ja peale astronoomilist loojangut.  
 
